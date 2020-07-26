@@ -32,27 +32,25 @@ function generateComponent(args) {
     fs.writeFileSync(targetName, processed);
   }
 
-  function processTemplates(err, templates, args) {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-
+  function processTemplates(templates, args) {
     const componentFolderPath = path.join(basePath, componentsFolder, componentName);
-    mkdirp(componentFolderPath, function (err) {
-      if (err) {
-        console.err(err);
-        process.exit(1);
-      }
 
+    mkdirp(componentFolderPath).then(made => {
       for (var i = 0; i < templates.length; i++) {
         processTemplate(templates[i], args);
       }
+    }).catch(err => {
+      console.err(err);
+      process.exit(1);
     });
   }
 
   fs.readdir(boilerPlate, function(err, templates) {
-    processTemplates(err, templates, args);
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    processTemplates(templates, args);
   });
 }
 
