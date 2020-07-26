@@ -1,6 +1,6 @@
 {
   "name": "create-boilerplate",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Generates React Components",
   "main": "index.js",
   "author": "Jakob Klepp <jakob-npm@truh.in>",
