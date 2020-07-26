@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import styles from '{{=it.requirePath}}/{{=it.componentName}}/{{=it.componentName}}.scss';
+
+class {{=it.componentName}} extends Component {
+  static propTypes = {
+    value: PropTypes.string,
+  };
+
+  static defaultProps = {
+    value: '',
+  };
+
+  render() {
+    const { value } = this.props;
+
+    return (
+      <div className={styles.text}>
+        {{=it.componentName}}: {value}
+      </div>
+    );
+  }
+}
+
+export default {{=it.componentName}};

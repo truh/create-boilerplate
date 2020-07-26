@@ -1,0 +1,17 @@
+{
+  "name": "create-boilerplate",
+  "version": "0.2.2",
+  "description": "Generates React Components",
+  "main": "index.js",
+  "author": "Jakob Klepp <jakob.klepp@moonshiner.at>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "dot": "^1.1.2",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1"
+  },
+  "bin": {
+    "create-boilerplate": "./index.js"
+  }
+}
